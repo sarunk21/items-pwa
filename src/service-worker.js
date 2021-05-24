@@ -1,6 +1,16 @@
+workbox.precaching.precacheAndRoute(self.__precacheManifest);
+
+self.addEventListener('install', () => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', () => {
+  clients.claim();
+});
+
 workbox.routing.registerRoute(
   "https://sarunk-items-api.herokuapp.com/api/item",
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.NetworkFirst({
     cacheName: "api-data",
     plugins: [
       new workbox.expiration.Plugin({
@@ -13,15 +23,13 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp("https://sarunk-items-api.herokuapp.com/storage/img"),
-  new workbox.strategies.StaleWhileRevalidate({
+  new workbox.strategies.CacheFirst({
     cacheName: "api-image",
     plugins: [
       new workbox.expiration.Plugin({
-        maxAgeSeconds: 30,
-        maxEntries: 360 * 60
+        maxEntries: 30,
+        maxAgeSeconds: 360 * 60
       })
     ]
   })
 )
-
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
