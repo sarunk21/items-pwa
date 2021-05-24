@@ -1,8 +1,6 @@
-workbox.precaching.precacheAndRoute(self.__precacheManifest);
-
 workbox.routing.registerRoute(
   "https://sarunk-items-api.herokuapp.com/api/item",
-  new workbox.strategies.NetworkFirst({
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: "api-data",
     plugins: [
       new workbox.expiration.Plugin({
@@ -15,7 +13,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp("https://sarunk-items-api.herokuapp.com/storage/img"),
-  new workbox.strategies.CacheFirst({
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: "api-image",
     plugins: [
       new workbox.expiration.Plugin({
@@ -25,3 +23,5 @@ workbox.routing.registerRoute(
     ]
   })
 )
+
+workbox.precaching.precacheAndRoute(self.__precacheManifest);
