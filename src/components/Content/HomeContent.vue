@@ -37,7 +37,7 @@
             v-if="index <= 3"
           >
             <img
-              :src="`https://sarunk-items-api.herokuapp.com/storage/img/${item.gambar}`"
+              :src="`https://sarunk-api.000webhostapp.com/sarunk-api/public/img/${item.gambar}`"
               :alt="item.nama"
               class="max-h-40 mx-auto"
             />

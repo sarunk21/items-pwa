@@ -9,7 +9,7 @@ self.addEventListener('activate', () => {
 });
 
 workbox.routing.registerRoute(
-  "https://sarunk-items-api.herokuapp.com/api/item",
+  "https://sarunk-api.000webhostapp.com/api/item",
   new workbox.strategies.NetworkFirst({
     cacheName: "api-data",
     plugins: [
@@ -22,8 +22,8 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  new RegExp("https://sarunk-items-api.herokuapp.com/storage/img"),
-  new workbox.strategies.CacheFirst({
+  new RegExp("https://sarunk-api.000webhostapp.com/sarunk-api/public/img/"),
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: "api-image",
     plugins: [
       new workbox.expiration.Plugin({
