@@ -57,7 +57,7 @@ export default {
     },
     sub() {
       this.post();
-      this.$emit("closeModal", "post");
+      this.$emit("closeModal");
     },
   },
 };

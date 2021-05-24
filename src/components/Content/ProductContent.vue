@@ -53,9 +53,6 @@ export default {
       this.modal = !this.modal;
     },
   },
-  updated() {
-    this.load();
-  },
 };
 </script>
 
