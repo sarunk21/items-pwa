@@ -33,3 +33,27 @@ workbox.routing.registerRoute(
     ]
   })
 )
+
+workbox.routing.registerRoute(
+  ({ url }) => url.origin === self.location.origin && /\.(jpe?g|png|svg|ico)$/i.test(url.pathname),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: "images",
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 50
+      })
+    ]
+  })
+)
+
+workbox.routing.registerRoute(
+  ({ url }) => url.origin.includes('fonts.googleapis.com'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: "fonts",
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 20
+      })
+    ]
+  })
+)
