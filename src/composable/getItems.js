@@ -4,7 +4,7 @@ const getItems = () => {
   const items = ref([]);
 
   const load = async () => {
-    const data = await fetch("https://sarunk-api.000webhostapp.com/api/item");
+    const data = await fetch("https://sar-api.000webhostapp.com/api/item");
     items.value = await data.json();
   }
 

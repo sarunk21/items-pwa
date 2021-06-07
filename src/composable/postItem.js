@@ -12,7 +12,7 @@ const postItem = () => {
     form.append('harga', harga.value);
     form.append('gambar', gambar.value.files[0]);
     form.append('deskripsi', deskripsi.value);
-    fetch("https://sarunk-api.000webhostapp.com/api/item", {
+    fetch("https://sar-api.000webhostapp.com/api/item", {
       method: 'POST',
       body: form
     })

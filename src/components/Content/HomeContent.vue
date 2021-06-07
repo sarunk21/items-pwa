@@ -12,13 +12,26 @@
           </p>
           <router-link
             to="/product"
-            class="px-4 py-3 inline-block bg-green-400 text-gray-50 text-md md:text-xl rounded-md shadow-lg"
+            class="
+              px-4
+              py-3
+              inline-block
+              bg-green-400
+              text-gray-50 text-md
+              md:text-xl
+              rounded-md
+              shadow-lg
+            "
           >
             Produk Kami
           </router-link>
         </div>
         <div class="col-span-12 order-first md:col-span-6 md:order-last">
-          <img src="../../assets/bg.png" class="max-h-96 mx-auto" />
+          <img
+            src="../../assets/bg.png"
+            alt="hero image"
+            class="max-h-96 mx-auto"
+          />
         </div>
       </div>
     </section>
@@ -37,7 +50,7 @@
             v-if="index <= 3"
           >
             <img
-              :src="`https://sarunk-api.000webhostapp.com/sarunk-api/public/img/${item.gambar}`"
+              :src="`https://sar-api.000webhostapp.com/public/img/${item.gambar}`"
               :alt="item.nama"
               class="max-h-40 mx-auto"
             />

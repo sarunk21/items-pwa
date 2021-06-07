@@ -2,7 +2,15 @@
   <div class="container mx-auto px-8 py-5 my-3">
     <button
       @click="toggleModal"
-      class="px-4 py-2 inline-block bg-green-400 text-gray-50 rounded-md shadow-lg"
+      class="
+        px-4
+        py-2
+        inline-block
+        bg-green-400
+        text-gray-50
+        rounded-md
+        shadow-lg
+      "
     >
       Tambah Produk
     </button>
@@ -14,7 +22,7 @@
       >
         <div class="container bg-gray-50 border rounded-lg shadow p-5">
           <img
-            :src="`https://sarunk-api.000webhostapp.com/sarunk-api/public/img/${item.gambar}`"
+            :src="`https://sar-api.000webhostapp.com/public/img/${item.gambar}`"
             :alt="item.nama"
             class="max-h-40 mx-auto"
           />
